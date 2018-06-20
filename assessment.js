@@ -8,6 +8,8 @@ After writing your function uncomment the matching function reference at the bot
 
 function helloWorld() {
 
+  return "Hello World!";
+
 }
 
 /*
@@ -23,10 +25,33 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
+function lambdaSchool(num) {
+
+  if (num % 3 == 0 && num % 5 == 0) {
+
+    return "Lambda School"
+
+  }
+
+  else if (num % 3 == 0) {
+
+    return "Lambda";
+
+  }
+
+  else if (num % 5 == 0) {
+
+    return "School";
+
+  }
+
+  else {
+
+    return num;
+
+  }
 
 }
-
 /*
 3. Write a function called longestString that has a single parameter called strs.
      strs will be an array of strings.
@@ -38,7 +63,25 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(strs) {
+
+  var longestLength = 0;
+  var longestPos = 0;
+
+  for (let i = 0; i < strs.length; i++) {
+
+    let length = strs[i].length;
+
+    if (length > longestLength) {
+
+      longestLength = length;
+      longestPos = i;
+
+    }
+
+  }
+
+  return strs[longestPos];
 
 }
 
@@ -63,7 +106,17 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
+function computeUserAverageAge(users) {
+
+  var sum = 0;
+
+  for (let i = 0; i < users.length; i++) {
+
+    sum += users[i].age;
+
+  }
+
+  return Math.round(sum / users.length);
 
 }
 
